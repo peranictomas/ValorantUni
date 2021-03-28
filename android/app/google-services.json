@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "868992500282",
+    "project_id": "valorantuniversity",
+    "storage_bucket": "valorantuniversity.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:868992500282:android:e71249736f9c9429e52b03",
+        "android_client_info": {
+          "package_name": "com.valorantuniversity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "868992500282-qmdph819kjv5vij2km5obf89lqepi0mf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuUv_lQ8h18qqrUB4peDDTV8GpxxDVazA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "868992500282-qmdph819kjv5vij2km5obf89lqepi0mf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "868992500282-9o8mvv11dsjiiujq7760rb71lsjpk0sj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.ValorantUniversity"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
