@@ -44,6 +44,15 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
     justifyContent: 'center',
   },
+
+  title: {
+    fontWeight: '800',
+    fontSize: 28,
+    marginBottom: 10,
+    color: '#1a2c49',
+    textAlign: 'center',
+    paddingTop: 20,
+  },
 });
 
 export default HomePage;
