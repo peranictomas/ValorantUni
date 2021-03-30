@@ -9,7 +9,7 @@ function Onboarding() {
   const scrollX = useRef(new Animated.Value(0)).current;
   const slidesRef = useRef(null);
   const viewableItemChanged = useRef(({viewableItems}) => {
-    setCurrentIndex(viewableItems[0].index);
+    setCurrentIndex(viewableItems[2].index);
   }).current;
   const viewConfig = useRef({viewAreaCoveragePercentThreshold: 50}).current;
   return (
