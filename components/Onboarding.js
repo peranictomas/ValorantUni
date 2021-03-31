@@ -9,7 +9,7 @@ function Onboarding() {
   const scrollX = useRef(new Animated.Value(0)).current;
   const slidesRef = useRef(null);
   const viewableItemChanged = useRef(({viewableItems}) => {
-    setCurrentIndex(viewableItems[2].index);
+    setCurrentIndex(viewableItems[0].index);
   }).current;
   const viewConfig = useRef({viewAreaCoveragePercentThreshold: 50}).current;
   return (
@@ -46,7 +46,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-
-
 });
 export default Onboarding;

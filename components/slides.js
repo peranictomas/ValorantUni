@@ -3,14 +3,14 @@ export default [
     id: '1',
     title: 'Latest News!',
     description:
-        'Valorant Patch 2.06 is out! Including Changes to Viper, Yoru, Killjoy, and More!',
+      'Valorant Patch 2.06 is out! Including Changes to Viper, Yoru, Killjoy, and More!',
     image: require('../assets/images/PatchNotes.jpg'),
   },
   {
     id: '2',
     title: 'Welcome!',
     description:
-      'This is your first step in becoming a Valorant Expert! Scroll Right To Explore All The Features You Have Access To. See You On The Battlefield! \n\n Scroll Right To Explore All The Features!',
+      'This is your first step in becoming a Valorant Expert! Scroll Right To Explore All The Features You Have Access To. See You On The Battlefield! Scroll Right To Explore All The Features!',
     image: require('../assets/images/icon.png'),
   },
   {
