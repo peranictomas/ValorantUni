@@ -49,12 +49,12 @@ function Register({navigation}) {
           />
           <ThemeProvider theme={theme}>
             <Button title="Register"
-              onPress={() => navigation.navigate('HomePage')}
+              onPress={() => navigation.navigate('Profile')}
             />
           </ThemeProvider>
         </View>
       );
-    
+
   }
 
   const styles = StyleSheet.create({
@@ -65,7 +65,7 @@ function Register({navigation}) {
       justifyContent: 'center',
     },
   });
-  
+
 export default Register;
- 
- 
+
+
