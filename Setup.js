@@ -3,6 +3,7 @@ import App from './App';
 import firebase from "@react-native-firebase/app";
 import Auth from "@react-native-firebase/auth";
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyBbr0-7jXhJr9aT4AEwbJ1EBZun6oBEb1c",
   authDomain: "valorantuniversity.firebaseapp.com",
