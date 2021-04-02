@@ -24,7 +24,7 @@ function HomePage({navigation}){
           <Text>Authentication</Text>
         </ListItem>
         <ListItem>
-          <Text>Realtime Database</Text>
+          <Text onPress={() => navigation.navigate('realTime')}>Realtime Database</Text>
         </ListItem>
       </Content>
     </Container>
