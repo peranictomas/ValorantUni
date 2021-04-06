@@ -7,6 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomePage from './src/HomePage';
 import auth from './src/auth';
 import realTime from './src/realTime';
+import UploadTutorial from "./src/UploadTutorial";
 
 const Stack = createStackNavigator();
 
@@ -14,6 +15,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+          <Stack.Screen name="UploadTutorial" component={UploadTutorial} />
         <Stack.Screen name="HomePage" component={HomePage} />
         <Stack.Screen name="auth" component={auth} />
         <Stack.Screen name="realTime" component={realTime} />
