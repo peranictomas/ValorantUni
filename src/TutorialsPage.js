@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import {ActivityIndicator, FlatList, View, Text, TouchableHighlight} from 'react-native';
 import { database } from '../Setup';
+import {submitUser} from "../apiService";
 
 
 function TutorialsPage() {
 
 
-    const tutorials = database().ref('tutorials').limitToFirst(10).once('value')
-    console.log(tutorials.length)
-    // database()
-    //     .ref('/tutorials')
-    //     .once('value')
-    //     .then(snapshot => {
-    //         console.log('User data: ', snapshot.val());
-    //     });
+    const [tutorials, setTutorials] = React.useState([]);
+
+
+
+    const getTutorials = () =>{
+        database().ref('tutorials').once("value").then((snapshot)=>{
+            setTutorials([snapshot.val()]);
+        });
+    };
 
     return (
         <View>
