@@ -8,6 +8,7 @@ import HomePage from './src/HomePage';
 import auth from './src/auth';
 import realTime from './src/realTime';
 import UploadTutorial from "./src/UploadTutorial";
+import TutorialsPage from "./src/TutorialsPage";
 
 const Stack = createStackNavigator();
 
@@ -15,6 +16,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+          <Stack.Screen name="TutorialsPage" component={TutorialsPage} />
           <Stack.Screen name="UploadTutorial" component={UploadTutorial} />
         <Stack.Screen name="HomePage" component={HomePage} />
         <Stack.Screen name="auth" component={auth} />
