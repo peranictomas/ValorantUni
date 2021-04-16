@@ -83,3 +83,27 @@ export const submitTutorial = (Id, Title, Tags, Link) => {
             });
     });
 };
+
+export const submitCoach = (Id, Name, Rank, Rating) => {
+    return new Promise(function(resolve, reject){
+        let key;
+        if (Id != null){
+            key = Id;
+        }
+        else{
+            key = database().ref().push().key;
+        }
+        let dataToSave = {
+            Id: key,
+            Name: Name,
+            Rank: Rank,
+            Rating: Rating,
+        };
+        database().ref('coaches/'+key).update(dataToSave).then(snapshot => {
+            resolve(snapshot);
+        })
+            .catch(error => {
+                reject(error);
+            });
+    });
+};

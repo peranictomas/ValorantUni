@@ -39,6 +39,9 @@ function homePage({navigation}){
                 <Button block onPress={() => navigation.navigate('TutorialsPage')}>
                     <Text>Tutorials Page</Text>
                 </Button>
+                <Button block onPress={() => navigation.navigate('coachingPage')}>
+                    <Text>Coaching Page</Text>
+                </Button>
                 <Button block onPress={() => navigation.navigate('mainMenu')}>
                     <Text>Continue</Text>
                 </Button>

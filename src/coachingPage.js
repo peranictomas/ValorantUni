@@ -8,41 +8,28 @@ import {
     StyleSheet,
     RefreshControl,
     ScrollView,
+    Image
 } from 'react-native';
 import {Header, Left, Right, Body, Title, Button, Icon, Input, Item} from 'native-base'
 import { database } from '../Setup';
 import YoutubePlayer from "react-native-youtube-iframe";
 
-function TutorialsPage({navigation}){
+function coachingPage({navigation}){
 
     const [loading, setLoading] = useState(true); // Set loading to true on component mount
-    const [tutorials, setTutorials] = useState([]); // Initial empty array of users
+    const [coaches, setCoaches] = useState([]); // Initial empty array of users
     const [refreshing, setRefreshing] = useState(false);
 
     const onRefresh = () =>{
         setRefreshing(true)
-        database().ref('tutorials').once('value').then((snapshot) => {
-            const tutorials = [];
+        database().ref('coaches').once('value').then((snapshot) => {
+            const coaches = [];
 
             snapshot.forEach((child) => {
-                tutorials.push(child.val());
+                coaches.push(child.val());
             });
 
-            setTutorials(tutorials);
-            setLoading(false);
-        })
-        setRefreshing(false);
-    }
-    const onFilter = () =>{
-        setRefreshing(true)
-        database().ref('tutorials').once('value').then((snapshot) => {
-            const tutorials = [];
-
-            snapshot.forEach((child) => {
-                tutorials.push(child.val());
-            });
-
-            setTutorials(tutorials);
+            setCoaches(coaches);
             setLoading(false);
         })
         setRefreshing(false);
@@ -50,16 +37,16 @@ function TutorialsPage({navigation}){
 
     useEffect(() => {
         let subscriber = database()
-            .ref('tutorials')
+            .ref('coaches')
             .once('value')
             .then((snapshot) => {
-                const tutorials = [];
+                const coaches = [];
 
                 snapshot.forEach((child) => {
-                    tutorials.push(child.val());
+                    coaches.push(child.val());
                 });
 
-                setTutorials(tutorials);
+                setCoaches(coaches);
                 setLoading(false);
             });
 
@@ -73,20 +60,6 @@ function TutorialsPage({navigation}){
 
     return (
         <View style={styles.container}>
-          <Item>
-            <Input
-                label="Search"
-                placeholder='Search'/>
-            </Item>
-
-            <Button block onPress={onFilter}>
-                <Text>Search</Text>
-            </Button>
-
-            <Button block onPress={() => navigation.navigate('UploadTutorial')}>
-                <Text>Create Tutorial</Text>
-            </Button>
-
             <ScrollView
                         refreshControl={
                             <RefreshControl
@@ -94,19 +67,32 @@ function TutorialsPage({navigation}){
                                 onRefresh={onRefresh}
                             />
                         }>
+                            
                 {
-                    tutorials.map((item) => {
+                    coaches.map((item) => {
                         return(
+                            <TouchableHighlight style={styles.coach}>
                             <View key={item.Id} style={styles.listItem}>
-                                <View>
-                                    <YoutubePlayer height={225} play={false} videoId={item.Link}/>
+                            <View style={styles.title}>
+                            <Image style={styles.tinyLogo} source={{uri: item.picture}}/>
                                 </View>
                                 <View style={styles.title}>
                                     <Text style={styles.text}>
-                                        {item.Title}
+                                        {item.Name}
+                                    </Text>
+                                </View>
+                                <View style={styles.title}>
+                                    <Text style={styles.text}>
+                                        {item.Rank}
+                                    </Text>
+                                </View>
+                                <View style={styles.title}>
+                                    <Text style={styles.text}>
+                                        {item.Rating}
                                     </Text>
                                 </View>
                             </View>
+                            </TouchableHighlight>
                         )
                     })
                 }
@@ -115,16 +101,14 @@ function TutorialsPage({navigation}){
     );
 }
 
-
 const styles = StyleSheet.create({
-
     listItem:{
         marginBottom: '5%',
         backgroundColor: '#CCCCCC',
+        alignItems: 'center',
     },
     text:{
         fontSize: 20,
-        paddingLeft: '2%',
     },
     title:{
       marginBottom: '3%',
@@ -132,7 +116,13 @@ const styles = StyleSheet.create({
     container:{
         height: '100%',
         backgroundColor: '#FFFFFF',
-    }
+    },
+    tinyLogo: {
+        width: 50,
+        height: 50,
+        marginTop: 10,
+        borderRadius: 50,
+      },
 });
 
-export default TutorialsPage;
+export default coachingPage;

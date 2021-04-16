@@ -11,15 +11,19 @@ import UploadTutorial from "./src/UploadTutorial";
 import TutorialsPage from "./src/TutorialsPage";
 import homePage from "./src/homePage";
 import userInfo from "./src/userInfo";
-
+import coachingPage from './src/coachingPage'
+import uploadCoach from './src/uploadCoach'
 const Stack = createStackNavigator();
 
 function App() {
   return (
       <NavigationContainer>
         <Stack.Navigator>
+          
             <Stack.Screen name="mainMenu" component={mainMenu} />
             <Stack.Screen name="homePage" component={homePage} />
+            <Stack.Screen name="coachingPage" component={coachingPage} />
+            <Stack.Screen name="uploadCoach" component={uploadCoach} />
           <Stack.Screen name="TutorialsPage" component={TutorialsPage} options={{
               animationEnabled: false,
           }}/>
