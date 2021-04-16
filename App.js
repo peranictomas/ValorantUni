@@ -5,7 +5,6 @@ import {View, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Register from './src/Register';
-import HomePage from './src/HomePage';
 import Profile from './src/Profile';
 
 const Stack = createStackNavigator();
@@ -15,7 +14,6 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Register" component={Register} />
-        <Stack.Screen name="HomePage" component={HomePage} />
         <Stack.Screen name="Profile" component={Profile} />
       </Stack.Navigator>
     </NavigationContainer>
