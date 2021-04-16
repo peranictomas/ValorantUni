@@ -1,10 +1,11 @@
 import React, {useState, useEffect, Component} from 'react';
 import {NavigationContainer} from "react-navigation";
-import {ActivityIndicator, FlatList, View, Text, TouchableHighlight, StyleSheet} from 'react-native';
+import {ActivityIndicator, FlatList, View, Text, TouchableHighlight, StyleSheet, RefreshControl} from 'react-native';
+import {Header, Left, Right, Body, Title, Button, Icon} from 'native-base'
 import { database } from '../Setup';
 import YoutubePlayer from "react-native-youtube-iframe";
 
-function TutorialsPage({navigation}) {
+function TutorialsPage({navigation}){
 
     const [loading, setLoading] = useState(true); // Set loading to true on component mount
     const [tutorials, setTutorials] = useState([]); // Initial empty array of users
@@ -34,10 +35,23 @@ function TutorialsPage({navigation}) {
 
     return (
         <View style={styles.container}>
+            <Header>
+                {/*<Left>*/}
+
+                {/*    <Button transparent icon onPress={() => }>*/}
+                {/*        <Icon name="refresh"/>*/}
+                {/*    </Button>*/}
+                {/*</Left>*/}
+                <Right>
+
+                    <Button transparent icon onPress={() => navigation.navigate('UploadTutorial')}>
+                        <Icon name="add"/>
+                    </Button>
+                </Right>
+            </Header>
             <FlatList
                 data={tutorials}
                 renderItem={({item}) =>
-
                     <TouchableHighlight>
                         <View style={styles.listItem}>
                             <View >
@@ -48,11 +62,6 @@ function TutorialsPage({navigation}) {
                                     {item.Title}
                                 </Text>
                             </View>
-                            {/*<View style={styles.tags}>*/}
-                            {/*    <Text>*/}
-                            {/*        {item.Tags.replaceAll(',', ', ')}*/}
-                            {/*    </Text>*/}
-                            {/*</View>*/}
                         </View>
                     </TouchableHighlight>
                 }
@@ -78,6 +87,7 @@ const styles = StyleSheet.create({
       marginBottom: '3%',
     },
     container:{
+        height: '100%',
         backgroundColor: '#FFFFFF',
     }
 });

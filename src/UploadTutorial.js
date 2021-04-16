@@ -52,7 +52,7 @@ function UploadTutorial({navigation}) {
             />
             <ThemeProvider theme={theme}>
                 <Button title="Upload"
-                        onPress={() => saveTutorial('Id')}
+                        onPressIn={() => saveTutorial('Id')} onPressOut={() => navigation.goBack()}
                 />
             </ThemeProvider>
         </View>
