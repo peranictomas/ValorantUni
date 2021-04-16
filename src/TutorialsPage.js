@@ -67,7 +67,7 @@ function TutorialsPage({navigation}){
             {/*</Left>*/}
 
 
-            <Button block onPress={() => navigation.navigate('mainMenu')}>
+            <Button block onPress={() => navigation.navigate('UploadTutorial')}>
                 <Text>Create Tutorial</Text>
             </Button>
 

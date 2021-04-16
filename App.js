@@ -20,7 +20,9 @@ function App() {
         <Stack.Navigator>
             <Stack.Screen name="mainMenu" component={mainMenu} />
             <Stack.Screen name="homePage" component={homePage} />
-          <Stack.Screen name="TutorialsPage" component={TutorialsPage} />
+          <Stack.Screen name="TutorialsPage" component={TutorialsPage} options={{
+              animationEnabled: false,
+          }}/>
           <Stack.Screen name="UploadTutorial" component={UploadTutorial} />
         <Stack.Screen name="signIn" component={signIn} />
         <Stack.Screen name="signUp" component={signUp}/>
