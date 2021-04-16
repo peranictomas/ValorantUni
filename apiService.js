@@ -35,7 +35,7 @@ export const SignOutUser=()=>{
     });
 };
 
-export const submitUser = (Id, Name, Position) => {
+export const submitUser = (Id, emailAdd, firstName, lastName, Age) => {
     return new Promise(function(resolve, reject){
         let key;
         if (Id != null){
@@ -46,8 +46,10 @@ export const submitUser = (Id, Name, Position) => {
         }
         let dataToSave = {
             Id: key,
-            Name: Name,
-            Position: Position,
+            emailAdd: emailAdd,
+            firstName: firstName,
+            lastName: lastName,
+            Age: Age,
         };
         database().ref('users/'+key).update(dataToSave).then(snapshot => {
             resolve(snapshot);

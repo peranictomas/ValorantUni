@@ -7,6 +7,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomePage from './src/HomePage';
 import auth from './src/auth';
 import realTime from './src/realTime';
+import signUp from './src/signUp';
+import userInfo from './src/userInfo';
 
 const Stack = createStackNavigator();
 
@@ -14,6 +16,12 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name="signUp" component={signUp}/>
+        <Stack.Screen 
+        name="userInfo" 
+        component={userInfo} 
+        options={{title: 'Account Information', headerLeft: null}}
+        />
         <Stack.Screen name="HomePage" component={HomePage} />
         <Stack.Screen name="auth" component={auth} />
         <Stack.Screen name="realTime" component={realTime} />
