@@ -9,6 +9,7 @@ import auth from './src/auth';
 import realTime from './src/realTime';
 import UploadTutorial from "./src/UploadTutorial";
 import TutorialsPage from "./src/TutorialsPage";
+import VideoPlayerScreen from "./src/VideoPlayerScreen";
 
 const Stack = createStackNavigator();
 
@@ -21,6 +22,7 @@ function App() {
         <Stack.Screen name="HomePage" component={HomePage} />
         <Stack.Screen name="auth" component={auth} />
         <Stack.Screen name="realTime" component={realTime} />
+        <Stack.Screen name="VideoPlayer" component={VideoPlayerScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
