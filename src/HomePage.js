@@ -1,34 +1,51 @@
 import * as React from 'react';
-import {
-  Container,
-  Content,
-  Header,
-  Body,
-  Title,
-  ListItem,
-  Text,
-  Right,
-} from 'native-base';
+import { Container, Content, Header, Body, Title, Text, Left, Button, Right, Form, Item } from 'native-base';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { Input } from 'react-native-elements';
+import { Auth } from '../Setup';
+import { SignOutUser } from '../apiService';
 
-function HomePage({navigation}){
+function homePage({navigation}){
+
+    const [user, setUser] = React.useState();
+
+    const signOut = () => {
+        SignOutUser()
+        .then(data =>{
+            alert(data);
+        })
+        .catch(error=>{
+            alert(error);
+        });
+    };
+
+    const onAuthStateChanged = user => {
+        setUser(user);
+    };
+
+    React.useEffect(() => {
+        const subscriber = Auth().onAuthStateChanged(onAuthStateChanged);
+        return subscriber;
+    },[]);
+
   return (
     <Container>
-      <Header>
-        <Body>
-          <Title>React Native Firebase Tutorials</Title>
-        </Body>
-        <Right/>
-      </Header>
       <Content>
-        <ListItem onPress={() => navigation.navigate('auth')}>
-          <Text>Authentication</Text>
-        </ListItem>
-        <ListItem>
-          <Text onPress={() => navigation.navigate('realTime')}>Realtime Database</Text>
-        </ListItem>
+      <Form>
+          <Button block onPress={signOut}>
+            <Text>Sign Out</Text>
+          </Button>
+        </Form>
+        <Button block onPress={()=>{
+            navigation.navigate('mainMenu',{
+            });
+        }} >
+            <Text>Continue</Text>
+          </Button>
       </Content>
     </Container>
   );
 };
+Icon.loadFont();
 
-export default HomePage;
+export default homePage;
