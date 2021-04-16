@@ -59,3 +59,27 @@ export const submitUser = (Id, emailAdd, firstName, lastName, Age) => {
         });
     });
 };
+
+export const submitTutorial = (Id, Title, Tags, Link) => {
+    return new Promise(function(resolve, reject){
+        let key;
+        if (Id != null){
+            key = Id;
+        }
+        else{
+            key = database().ref().push().key;
+        }
+        let dataToSave = {
+            Id: key,
+            Title: Title,
+            Tags: Tags,
+            Link: Link,
+        };
+        database().ref('tutorials/'+key).update(dataToSave).then(snapshot => {
+            resolve(snapshot);
+        })
+            .catch(error => {
+                reject(error);
+            });
+    });
+};
