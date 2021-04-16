@@ -2,9 +2,7 @@ import React, {useState, useEffect, Component} from 'react';
 import {NavigationContainer} from "react-navigation";
 import {ActivityIndicator, FlatList, View, Text, TouchableHighlight, StyleSheet} from 'react-native';
 import { database } from '../Setup';
-import Video from 'react-native-video'
 import YoutubePlayer from "react-native-youtube-iframe";
-import {Container} from "native-base";
 
 function TutorialsPage({navigation}) {
 
