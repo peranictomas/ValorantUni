@@ -1,5 +1,13 @@
 import * as React from 'react';
-import { Container, Content, Header, Body, Title, Text, Left, Button, Right, Form, Item } from 'native-base';
+import {Container, Content, Header,Body,
+  Title,
+  Text,
+  Left,
+  Button,
+  Right,
+  Form,
+  Item,
+} from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Input } from 'react-native-elements';
 import { Auth } from '../Setup';
@@ -44,6 +52,8 @@ function auth({navigation}){
         });
     };
 
+
+
     const onAuthStateChanged = user => {
         setUser(user);
     };
@@ -84,8 +94,10 @@ function auth({navigation}){
                         <Icon
                         name='envelope'
                         size={24}
-                        color='black'/>
-                    }/>
+                        color='black'
+                        />
+                    }
+                />
             </Item>
             <Item>
             <Input
@@ -98,14 +110,18 @@ function auth({navigation}){
                         <Icon
                         name='lock'
                         size={24}
-                        color='black'/>
-                    }/>
+                        color='black'
+                        />
+                    }
+                />
             </Item>
-            <Button block onPress={signUp}>
+            <Button block
+            onPress={signUp}
+            >
                 <Text>Sign Up</Text>
             </Button>
           </Form>
-          {/* Sign In form */}
+
           <Form>
               <Text>Sign In</Text>
             <Item>
@@ -118,8 +134,10 @@ function auth({navigation}){
                         <Icon
                         name='envelope'
                         size={24}
-                        color='black'/>
-                    }/>
+                        color='black'
+                        />
+                    }
+                />
             </Item>
             <Item>
             <Input
@@ -132,17 +150,24 @@ function auth({navigation}){
                         <Icon
                         name='lock'
                         size={24}
-                        color='black'/>
-                    }/>
+                        color='black'
+                        />
+                    }
+                />
             </Item>
-            <Button block onPress={signIn}>
+            <Button block
+            onPress={signIn}
+            >
                 <Text>Login</Text>
             </Button>
           </Form>
+
       </Content>
     </Container>
   );
 };
+
 Icon.loadFont();
+
 
 export default auth;

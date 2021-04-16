@@ -5,7 +5,7 @@ import { Input } from 'react-native-elements';
 import { Auth } from '../Setup';
 import { SignInUser, SignUpUser, SignOutUser } from '../apiService';
 
-function signUp({navigation}){
+function signIn({navigation}){
 
     const [state, setState] = React.useState({
         emailAddress: '',
@@ -14,8 +14,8 @@ function signUp({navigation}){
 
     const [user, setUser] = React.useState();
 
-    const signUp = () => {
-        SignUpUser(state.emailAddress, state.password)
+    const signIn = () => {
+        SignInUser(state.emailAddress, state.password)
         .then(data =>{
             alert(data);
         })
@@ -64,14 +64,13 @@ function signUp({navigation}){
                         color='black'/>
                     }/>
             </Item>
-            <Button block onPress={signUp}>
-                <Text>Sign Up</Text>
+            <Button block onPress={signIn}>
+                <Text>Sign In</Text>
             </Button>
           </Form>
            {user &&(
         <Button block onPress={()=>{
-            navigation.navigate('userInfo',{
-                email: state.emailAddress,
+            navigation.navigate('homePage',{
             });
         }} >
             <Text>Continue</Text>
@@ -84,4 +83,4 @@ function signUp({navigation}){
 };
 Icon.loadFont();
 
-export default signUp;
+export default signIn;

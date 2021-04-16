@@ -77,7 +77,7 @@ function userInfo({route, navigation}){
           />
         </Item>
       <Button block onPress={
-          () => {saveUsers('Id'); navigation.navigate('HomePage');}
+          () => {saveUsers('Id'); navigation.navigate('homePage')}
           }>
             <Text>Continue</Text>
         </Button>
