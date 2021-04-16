@@ -9,14 +9,17 @@ import userInfo from './src/userInfo';
 import homePage from './src/homePage';
 import mainMenu from './src/mainMenu';
 import signIn from './src/signIn';
-import imageTest from './src/imageTest';
+import UploadTutorial from "./src/UploadTutorial";
+import TutorialsPage from "./src/TutorialsPage";
+
 const Stack = createStackNavigator();
 
 function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        {/* <Stack.Screen name="Test" component={imageTest} /> */}
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="TutorialsPage" component={TutorialsPage} />
+          <Stack.Screen name="UploadTutorial" component={UploadTutorial} />
         <Stack.Screen name="mainMenu" component={mainMenu} />
         <Stack.Screen name="signIn" component={signIn} />
         <Stack.Screen name="signUp" component={signUp}/>
