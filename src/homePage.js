@@ -4,6 +4,9 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { Input } from 'react-native-elements';
 import { Auth } from '../Setup';
 import { SignOutUser } from '../apiService';
+import {
+    StyleSheet,
+} from 'react-native';
 
 function homePage({navigation}){
 
@@ -32,24 +35,33 @@ function homePage({navigation}){
         <Container>
             <Content>
                 <Form>
-                    <Button block onPress={signOut}>
+                    <Button style={styles.body} block onPress={signOut}>
                         <Text>Sign Out</Text>
                     </Button>
                 </Form>
-                <Button block onPress={() => navigation.navigate('TutorialsPage')}>
+                <Button style={styles.body} block onPress={() => navigation.navigate('TutorialsPage')}>
                     <Text>Tutorials Page</Text>
                 </Button>
-                <Button block onPress={() => navigation.navigate('coachingPage')}>
+                <Button style={styles.body} block onPress={() => navigation.navigate('coachingPage')}>
                     <Text>Coaching Page</Text>
                 </Button>
-                <Button block onPress={() => navigation.navigate('mainMenu')}>
+                <Button style={styles.body} block onPress={() => navigation.navigate('Profile')}>
+                    <Text>Profile Page</Text>
+                </Button>
+                <Button style={styles.body} block onPress={() => navigation.navigate('mainMenu')}>
                     <Text>Continue</Text>
                 </Button>
 
             </Content>
         </Container>
     );
-};
+}
+
+const styles = StyleSheet.create({
+    body:{
+        marginTop: 10,
+    },
+});
 
 Icon.loadFont();
 
