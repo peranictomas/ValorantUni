@@ -43,18 +43,6 @@ export default class Profile extends React.Component {
         </View>
       )
     } else {
-
-        // let userStats = this.state.dataSource.map((val, key) => {
-        //   // console.log(val.stats.kills)
-        //   console.log(this.state.dataSource[0].stats.kills)
-        //   return(
-        //       <View key={key}>
-        //         <Text>{val.stats.kills}</Text>
-        //       </View>
-        //       )
-        //
-        // });
-
         return (
           <View style={styles.container}>
             <View style={styles.imageContainer}>

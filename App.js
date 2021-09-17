@@ -14,12 +14,14 @@ import userInfo from "./src/userInfo";
 import coachingPage from './src/coachingPage';
 import uploadCoach from './src/uploadCoach';
 import Profile from './src/Profile';
+import valorantStats from './src/valorantStats';
 const Stack = createStackNavigator();
 
 function App() {
   return (
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen name="valorantStats" component={valorantStats}/>
             <Stack.Screen name="mainMenu" component={mainMenu} />
             <Stack.Screen name="homePage" component={homePage} />
             <Stack.Screen name="coachingPage" component={coachingPage} />
